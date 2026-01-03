@@ -1,0 +1,754 @@
+/* ========================================================= */
+/* === ОСНОВНЫЕ СТИЛИ (DESKTOP-FIRST: ДЛЯ БОЛЬШИХ ЭКРАНОВ) === */
+/* ========================================================= */
+@font-face {
+    font-family: "IgraSans";
+    src: url("/fonts/IgraSans/IgraSans.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+    font-family: "Inter", sans-serif;
+    color: #222;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: #272525;
+    font-size: 16px;
+}
+
+/* --- HEADER --- */
+.header {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.header .menu {
+    display: flex;
+    gap: 30px;
+    margin-left: 79px;
+    padding-right: 222px;
+}
+
+.header .c {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header .contact-btn {
+    padding: 15px 25px;
+    border-radius: 25px;
+    background: #272525;
+    color: #fff;
+    font-size: 16px;
+}
+
+.header .contact {
+    padding: 15px 25px;
+    border-radius: 25px;
+    background: #FFFFFF;
+    color: #272525;
+    font-size: 16px;
+}
+
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    width: 28px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #272525;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* --- BREADCRUMBS --- */
+.categories {
+    display: flex;
+    align-items: center;
+    font-size: 9px;
+    margin-top: 60px;
+    margin-left: 75px;
+    gap: 18px;
+    color: #4e4646;
+    font-weight: 100;
+}
+
+.categories p {
+    font-size: 10px;
+}
+
+.categories h1 {
+    font-weight: 270;
+}
+
+.categories .group {
+    color: black;
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 30px; 
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 65px;
+    margin-bottom: 30px;
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- TITLE & META --- */
+.left-top .title {
+    font-size: 70px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: -18px;
+    font-family: "IgraSans", sans-serif;
+    width: 659px;
+    height: 156px;
+}
+
+
+.left-top .meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 51px;
+    margin-top: -15px;
+}
+
+.left-top .palka {
+    color: #7e7e7e;
+}
+
+.meta .three {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.meta .one, .meta .two {
+    color: #7e7e7e;
+    font-size: 16px;
+}
+
+.meta .four {
+    margin-left: 6px;
+    text-decoration: underline;
+    color: rgba(255, 44, 51, 1);
+}
+
+/* --- SLIDER --- */
+.left-top .slider {
+    width: 850px;
+    max-width: 100%;
+    height: 478px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top:53px;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
+.slider .arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.slider .arrow.left { left: 15px; }
+.slider .arrow.right { right: 15px; }
+
+/* --- RIGHT FORM (rf) --- */
+.right-form {
+    width: 445px;
+    height: 785px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #111;
+    margin-top: 1px;
+    margin-left: -45px;
+}
+
+.right-form .rf-title {
+    font-size: 28px;
+    font-weight: 650;
+    margin-top: -5px;
+    margin-left: 3px;
+}
+
+.right-form .rf-event, .right-form .rf-price {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.right-form .rf-price {
+    font-weight: 430;
+    margin-bottom: 14px;
+}
+
+.right-form .rf-paynow {
+    width: 100%;
+    height: 29px;
+    background: #5aa7ff;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.right-form .rf-paynow:hover {
+    background: #4a97ef;
+}
+
+.right-form .rf-offers {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.right-form .rf-offers div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.right-form .rf-offers span {
+    color: #7e7e7e;
+}
+
+.right-form .rf-offers b {
+    font-weight: 410;
+    color: rgba(39, 37, 37, 1);
+}
+
+.right-form .rf-ages {
+    display: flex;
+    gap: 14px;
+    font-size: 13px;
+    color: #7e7e7e;
+    margin-bottom: 12px;
+}
+
+.right-form .rf-places {
+    border: 1px solid rgba(255, 44, 51, 1);
+    color: rgba(255, 44, 51, 1);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 16px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rf-form input[type="text"],
+.rf-form input[type="email"],
+.rf-form input[type="number"] {
+    width: 386px;
+    height: 37px;
+    border-radius: 22px;
+    border: 1px solid #e2e2e2;
+    padding: 0 16px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+    box-sizing: border-box; /* Важно для адаптивности */
+}
+
+.rf-form .rf-gender {
+    display: flex;
+    align-items: center;
+    gap: -10px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    position: relative;
+    padding-top: 10px;
+  
+}
+
+.rf-form .rf-gender span {
+    color: #6f6f6f;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* СЛОЖНЫЙ СЕЛЕКТОР ДЛЯ РАМКИ ГЕНДЕРА */
+.rf-form .rf-gender::after {
+    content: "";
+    position: absolute;
+    left: 82px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 52px;
+    border: 2px solid #cfcfcf;
+    border-radius: 28px;
+    pointer-events: none;
+}
+
+.rf-form .rf-gender label:first-of-type {
+    margin-left: 48px;
+    margin-bottom: 11px;
+}
+
+.rf-form .rf-gender label + label {
+    padding-left: 100px;
+    margin-bottom: 11px;
+}
+
+.rf-form .rf-info-text {
+    font-size: 14px;
+    color: #9a9a9a;
+    text-align: center;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.rf-form .rf-submit {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #ff3b30;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 14px;
+}
+
+.rf-form .rf-agree {
+    display: flex;
+    gap: 7px;
+    font-size: 10px;
+    color: #000;
+}
+
+.rf-form .rf-agree a {
+    color: #ff3b30;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+/* --- INFO & MAP BLOCKS --- */
+.about {
+    margin-top: 0;
+}
+
+.info-card {
+    width: 850px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-left: 75px;
+    margin-top: 25px;
+}
+
+.info-card .info-title {
+    font-size: 55px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-family: "IgraSans", sans-serif;
+}
+
+.info-card .info-list li {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    color: black;
+    font-weight: 395;
+}
+
+.map-card {
+    width: 850px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-left: 75px;
+    margin-top: 30px;
+}
+
+.map-card .info-title {
+    font-family: "IgraSans", sans-serif;
+    font-size: 58px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.map-card .info-text {
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(39, 37, 37, 1);
+    max-width: 720px;
+}
+
+.map-card .map-box {
+    margin-top: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.map-card .map-box img {
+    width: 100%;
+    display: block;
+}
+
+.map-card .map-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.map-card .map-actions .map-btn {
+  width: 220px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 24px;
+    text-decoration: none;
+    color: #111;
+    background: none;
+    border: 1px solid rgba(235, 235, 235, 1);
+    transition: background .2s ease;
+    gap: 10px;
+}
+
+/* --- HOW SECTION --- */
+.how {
+    width: 850px;
+    margin-left: 75px;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.how .how-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 32px;
+    font-family: "IgraSans", sans-serif;
+}
+
+.how .how-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.how .how-card {
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    padding: 28px;
+    background: #ffffff;
+}
+
+.how .how-num {
+    font-size: 48px;
+    font-weight: 700;
+    color: #e53935;
+    margin-bottom: 10px;
+}
+
+.how .how-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 14px;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: "IgraSans", sans-serif;
+}
+
+.how .how-card-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #d9d9d9;
+}
+
+.how .how-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+}
+
+/* ======================================================= */
+/* === АДАПТИВНОСТЬ (MOBILE FIRST LOGIC via max-width) === */
+/* ======================================================= */
+
+@media (max-width: 900px) {
+
+    /* --- HEADER --- */
+    .header {
+        margin: 0;
+        padding: 15px; 
+        justify-content: space-between;
+    }
+    
+    .header .menu, .header .contact, .header .contact-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    /* Мобильное меню */
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 90;
+        padding: 80px 20px 20px;
+    }
+
+    /* --- BREADCRUMBS --- */
+    .categories {
+        margin-top: 20px;
+        margin-left: 15px;
+        gap: 8px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* --- MAIN CONTAINER --- */
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 20px 15px;
+        padding: 0;
+    }
+
+    /* --- TITLE & META --- */
+    .left-top .title {
+        font-size: 32px;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .left-top .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .left-top .palka {
+        display: none;
+    }
+
+    .meta .three, .meta .one, .meta .two, .meta .four {
+        font-size: 14px;
+    }
+    .meta .three { font-size: 18px; }
+
+    /* --- SLIDER --- */
+    .left-top .slider {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.7 / 1;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .slider .arrow {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* --- RIGHT FORM (rf) --- */
+    .right-form {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin: 0;
+        border-radius: 16px;
+    }
+
+    .right-form .rf-title {
+        font-size: 24px;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    
+    .rf-form input[type="text"],
+    .rf-form input[type="email"],
+    .rf-form input[type="number"] {
+        width: 100%; /* Полная ширина */
+        height: 45px;
+        margin-bottom: 10px;
+    }
+    
+    /* ИСПРАВЛЕННЫЙ БЛОК ГЕНДЕРА ДЛЯ МОБИЛЬНЫХ */
+    .rf-form .rf-gender {
+        justify-content: space-between;
+        gap: 0;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .rf-form .rf-gender::after {
+        /* Переопределяем рамку, чтобы она была гибкой */
+        display: block; 
+        left: 8px; 
+        right: 8px; 
+        height: 45px; 
+        border-radius: 25px;
+    }
+
+    .rf-form .rf-gender span {
+        display: block; /* Показываем текст "Ваш пол:" */
+        z-index: 10;
+        margin-right: 15px; 
+    }
+    
+    /* Сброс фиксированных отступов для меток внутри гендера */
+    .rf-form .rf-gender label:first-of-type, 
+    .rf-form .rf-gender label + label {
+        margin: 0;
+        padding: 0 5px; 
+        z-index: 10;
+    }
+
+    .rf-form .rf-submit {
+        height: 50px;
+    }
+
+    /* --- INFO & MAP BLOCKS --- */
+    .info-card, .map-card, .how {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+    
+    .info-card .info-title, .map-card .info-title {
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .info-card .info-list li, .map-card .info-text {
+        font-size: 15px;
+    }
+
+    .map-card .map-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .map-card .map-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* --- HOW SECTION --- */
+    .how .how-title {
+        font-size: 28px;
+        text-align: left;
+    }
+    .how .how-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 430px) {
+    .left-top .title {
+        font-size: 28px;
+    }
+    .info-card .info-title, .map-card .info-title, .how .how-title {
+        font-size: 24px;
+    }
+    .right-form .rf-title {
+        font-size: 20px;
+    }
+    .rf-gender{
+      margin-top: 20px;
+      width: 370px;
+    }
+    .map-card .map-actions .map-btn{
+      width: 250px;
+      height: 55px;
+    }
+    .second{
+        margin-left: 15px;
+    }
+  }
